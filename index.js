@@ -40,12 +40,10 @@ const specialChars = [
 ];
 
 const numbs = [...Array(10).keys()];
-console.log(upperCase);
-console.log(specialChars);
-console.log(numbs);
 
+// get password length from input
+const passwordInput = document.getElementById("pass-length");
 // generate 4 random password options:
-let passwordLength = 13;
 const upperCode = 0;
 const lowerCode = 1;
 const specialCode = 2;
@@ -54,6 +52,8 @@ const numbCode = 3;
 const getRandomInt = (max) => Math.floor(Math.random() * max);
 
 btn.addEventListener("click", function () {
+  let passwordLength = passwordInput.valueAsNumber;
+
   let password = "";
   let passwordArr = [];
 
