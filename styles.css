@@ -6,6 +6,7 @@
 
 :root {
   --main-bg-color: #150485;
+  --shadow-color: #590995;
   --button-color: #c62a88;
   --accent-color: #03c4a1;
 }
@@ -15,17 +16,44 @@ body {
   margin: 0;
   padding: 0;
   color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
   background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 1em auto;
 }
 
+/* button */
 button {
   background-color: var(--button-color);
   color: inherit;
+  width: fit-content;
+  padding: 0.2em 1em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
+button:hover,
+button:focus {
+  box-shadow: 12px 12px 2px 1px var(--shadow-color);
+  font-weight: bold;
+}
+
+/* typography */
+h1 {
+  margin-bottom: 0;
+}
+
+h5 {
+  margin-top: 0;
+}
 .accent {
   color: var(--accent-color);
 }
