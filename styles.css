@@ -1,0 +1,31 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #150485;
+  --button-color: #c62a88;
+  --accent-color: #03c4a1;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+button {
+  background-color: var(--button-color);
+  color: inherit;
+}
+
+.accent {
+  color: var(--accent-color);
+}
