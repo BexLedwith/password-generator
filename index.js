@@ -51,20 +51,29 @@ const lowerCode = 1;
 const specialCode = 2;
 const numbCode = 3;
 
-let password = "";
+const getRandomInt = (max) => Math.floor(Math.random() * max);
 
-// for (let i = 0; i < passwordLength; i++) {
-//     getRandomInt(4) === upperCode ? password +=
-// }
 btn.addEventListener("click", function () {
-  const getRandomInt = (max) => Math.floor(Math.random() * max);
-  let randomUpper = upperCase[getRandomInt(upperCase.length)];
-  let randomLower = upperCase[getRandomInt(upperCase.length)].toLowerCase();
-  let randomSpecial = specialChars[getRandomInt(specialChars.length)];
-  let randomNum = numbs[getRandomInt(numbs.length)];
+  let password = "";
+  let passwordArr = [];
 
-  console.log(randomUpper);
-  console.log(randomLower);
-  console.log(randomSpecial);
-  console.log(randomNum);
+  let i = 0;
+  do {
+    i += 1;
+    for (let i = 0; i < passwordLength; i++) {
+      getRandomInt(4) === upperCode
+        ? (password += upperCase[getRandomInt(upperCase.length)])
+        : getRandomInt(4) === lowerCode
+        ? (password += upperCase[getRandomInt(upperCase.length)].toLowerCase())
+        : getRandomInt(4) === specialCode
+        ? (password += specialChars[getRandomInt(specialChars.length)])
+        : (password += numbs[getRandomInt(numbs.length)]);
+    }
+    passwordArr.push(password);
+    password = "";
+  } while (i < 4);
+  password1.textContent = passwordArr[0];
+  password2.textContent = passwordArr[1];
+  password3.textContent = passwordArr[2];
+  password4.textContent = passwordArr[3];
 });
