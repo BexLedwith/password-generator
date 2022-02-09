@@ -23,10 +23,13 @@ body {
 body {
   background-color: var(--main-bg-color);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 60%;
-  margin: 1em auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  max-width: 50%;
+  margin-top: 25vh;
 }
 
 /* button */
@@ -89,4 +92,15 @@ h5 {
   background-color: var(--shadow-color);
   margin: 1em;
   padding: 0.2em 1em;
+}
+
+p {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+p:hover,
+p:focus {
+  box-shadow: 12px 12px 2px 1px var(--accent-color);
+  font-weight: bold;
 }

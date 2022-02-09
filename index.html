@@ -8,27 +8,36 @@
     <title>Password Generator</title>
   </head>
   <body>
-    <h1>Generate a <span class="accent">random password</span></h1>
-    <h5>Never use an insecure password again</h5>
-    <div class="flex">
-      <button id="btn" type="submit">⚡ Generate Passwords</button>
-      <div class="flex col">
-        <label for="pass-length">Password Length (6-100):</label>
-        <input
-          type="number"
-          id="pass-length"
-          name="pass-length"
-          min="6"
-          max="100"
-        />
+    <div class="main">
+      <h1>Generate a <span class="accent">random password</span></h1>
+      <h5>
+        Never use an insecure password again. Click on a password to copy to
+        your clipboard.
+      </h5>
+
+      <div class="flex">
+        <button id="btn" type="submit">⚡ Generate Passwords</button>
+        <div class="flex col">
+          <label for="pass-length">Password Length (6-25):</label>
+          <input
+            type="number"
+            id="pass-length"
+            name="pass-length"
+            min="6"
+            max="25"
+            value="13"
+          />
+        </div>
+      </div>
+
+      <div class="passwords-container">
+        <p class="accent password" id="p1">Accent Text</p>
+        <p class="accent password" id="p2">Accent Text</p>
+        <p class="accent password" id="p3">Accent Text</p>
+        <p class="accent password" id="p4">Accent Text</p>
       </div>
     </div>
-    <div class="passwords-container">
-      <p class="accent password" id="p1">Accent Text</p>
-      <p class="accent password" id="p2">Accent Text</p>
-      <p class="accent password" id="p3">Accent Text</p>
-      <p class="accent password" id="p4">Accent Text</p>
-    </div>
+
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
