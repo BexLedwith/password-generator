@@ -72,8 +72,45 @@ btn.addEventListener("click", function () {
     passwordArr.push(password);
     password = "";
   } while (i < 4);
-  password1.textContent = passwordArr[0];
-  password2.textContent = passwordArr[1];
-  password3.textContent = passwordArr[2];
-  password4.textContent = passwordArr[3];
+  password1.innerHTML =
+    passwordArr[0] +
+    `<span class="tooltiptext">Copy <br>${passwordArr[0]}<br> to clipboard </span>`;
+  password2.innerHTML =
+    passwordArr[1] +
+    `<span class="tooltiptext">Copy <br>${passwordArr[1]}<br> to clipboard </span>`;
+  password3.innerHTML =
+    passwordArr[2] +
+    `<span class="tooltiptext">Copy <br>${passwordArr[2]}<br> to clipboard </span>`;
+  password4.innerHTML =
+    passwordArr[3] +
+    `<span class="tooltiptext">Copy <br>${passwordArr[3]}<br> to clipboard </span>`;
 });
+
+// copy to the clipboard
+
+password1.addEventListener("click", function () {
+  copy(password1);
+});
+password2.addEventListener("click", function () {
+  copy(password2);
+});
+password3.addEventListener("click", function () {
+  copy(password3);
+});
+password4.addEventListener("click", function () {
+  copy(password4);
+});
+
+function copy(password) {
+  /*Copy the text inside the text */
+  const passwordText = password.innerText;
+  const textArea = document.createElement("textarea");
+  document.body.appendChild(textArea);
+  textArea.value = passwordText;
+  textArea.select();
+  textArea.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+  console.log(passwordText);
+  console.log(password);
+}
