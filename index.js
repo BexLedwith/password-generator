@@ -72,18 +72,10 @@ btn.addEventListener("click", function () {
     passwordArr.push(password);
     password = "";
   } while (i < 4);
-  password1.innerHTML =
-    passwordArr[0] +
-    `<span class="tooltiptext">Copy <br>${passwordArr[0]}<br> to clipboard </span>`;
-  password2.innerHTML =
-    passwordArr[1] +
-    `<span class="tooltiptext">Copy <br>${passwordArr[1]}<br> to clipboard </span>`;
-  password3.innerHTML =
-    passwordArr[2] +
-    `<span class="tooltiptext">Copy <br>${passwordArr[2]}<br> to clipboard </span>`;
-  password4.innerHTML =
-    passwordArr[3] +
-    `<span class="tooltiptext">Copy <br>${passwordArr[3]}<br> to clipboard </span>`;
+  password1.innerHTML = passwordArr[0];
+  password2.innerHTML = passwordArr[1];
+  password3.innerHTML = passwordArr[2];
+  password4.innerHTML = passwordArr[3];
 });
 
 // copy to the clipboard
@@ -111,6 +103,6 @@ function copy(password) {
   textArea.setSelectionRange(0, 99999);
   document.execCommand("copy");
   document.body.removeChild(textArea);
-  console.log(passwordText);
-  console.log(password);
+  // console.log(passwordText);
+  // console.log(password);
 }
